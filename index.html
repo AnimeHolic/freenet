@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FGS Tunnel - Free Internet VPN APK</title>
+    <script type='text/javascript' src='//pl26887248.profitableratecpm.com/d7/d0/16/d7d01667a1958c6c0b2335877ba303c3.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --primary-color: #4f46e5;
+            --accent-color: #06b6d4;
+            --dark-bg: #0f172a;
+            --darker-bg: #1e293b;
+            --text-light: #f1f5f9;
+            --text-muted: #cbd5e1;
+            --purple: #9333ea;
+            --blue: #00adff;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--dark-bg), var(--darker-bg));
+            color: var(--text-light);
+            text-align: center;
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        .bg-effect {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: rgba(0, 173, 255, 0.5);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 173, 255, 0.5), 0 0 20px rgba(147, 51, 234, 0.3);
+            animation: particleMove 12s linear infinite;
+        }
+        .particle:nth-child(2n) {
+            background: rgba(147, 51, 234, 0.5);
+            box-shadow: 0 0 10px rgba(147, 51, 234, 0.5), 0 0 20px rgba(0, 173, 255, 0.3);
+            animation-duration: 18s;
+        }
+        .particle:nth-child(3n) {
+            background: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+            animation-duration: 25s;
+        }
+        @keyframes particleMove {
+            0% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+            50% { opacity: 1; transform: translate(50vw, 50vh) scale(1.5); }
+            100% { transform: translate(100vw, 100vh) scale(1); opacity: 0; }
+        }
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--blue), var(--purple));
+            z-index: 1000;
+            transition: width 0.3s ease;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            padding: 2rem 1rem 4rem;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+            opacity: 0.3;
+        }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        .nav-bar.sticky {
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1rem;
+            margin-bottom: 1rem;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            max-width: 95%;
+            margin: 0.5rem auto;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0;
+            animation: fadeInLeft 1s ease-out forwards;
+        }
+        .nav-logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .nav-logo span {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            opacity: 0;
+            animation: fadeInRight 1s ease-out forwards;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: transform 0.3s ease, color 0.3s ease;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(90deg, var(--purple), var(--blue));
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        .nav-links a:hover {
+            color: #d1d5db;
+            transform: translateY(-3px);
+        }
+        .nav-download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.5rem;
+            background: linear-gradient(90deg, var(--purple), var(--blue));
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 173, 255, 0.4);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        .nav-download-btn:hover {
+            background: linear-gradient(90deg, var(--blue), var(--purple));
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 173, 255, 0.6);
+        }
+        header h1 {
+            font-size: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            background: linear-gradient(90deg, #ffffff, #b0e0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: glowText 2s ease-in-out infinite alternate, bounceIn 1.5s ease-out;
+            margin-top: 1rem;
+        }
+        header p.tagline {
+            font-size: 1.5rem;
+            color: #e0e0e0;
+            margin-top: 1rem;
+            font-style: italic;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out 0.5s forwards;
+        }
+        header p.subtitle {
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-top: 0.5rem;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out 0.7s forwards;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, rgba(243, 244, 246, 0.1), rgba(255, 255, 255, 0.05));
+            padding: 4rem 1rem;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            margin: -3rem auto 2rem;
+            max-width: 1200px;
+            width: 95%;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hero-section h2 {
+            font-size: 2.5rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: slideInLeft 1s ease-out forwards;
+        }
+        .hero-section p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            animation: slideInRight 1s ease-out 0.3s forwards;
+        }
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 1rem 3rem;
+            background: linear-gradient(90deg, var(--purple), var(--blue));
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 173, 255, 0.4);
+            animation: bounce 1.5s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-cta::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 20px;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(25deg);
+            transition: all 0.5s;
+        }
+        .hero-cta:hover::after {
+            left: 120%;
+        }
+        .hero-cta:hover {
+            background: linear-gradient(90deg, var(--blue), var(--purple));
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(0, 173, 255, 0.6);
+        }
+        section {
+            padding: 4rem 1rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+            position: relative;
+        }
+        section h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(90deg, var(--blue), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            opacity: 0;
+        }
+        section h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--blue), var(--purple));
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 3px;
+            animation: wave 2s ease-in-out infinite;
+        }
+        section > p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            opacity: 0;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .feature {
+            padding: 2rem;
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        .feature::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 173, 255, 0.1), rgba(147, 51, 234, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .feature:hover::before {
+            opacity: 1;
+        }
+        .feature:hover {
+            transform: translateY(-15px) rotate(2deg);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            background: rgba(30, 41, 59, 0.8);
+        }
+        .feature h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--blue);
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .feature h3 i {
+            font-size: 1.5rem;
+            color: var(--purple);
+            animation: pulseIcon 1.5s ease-in-out infinite;
+        }
+        .feature p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            position: relative;
+            z-index: 1;
+        }
+        .stats-section {
+            padding: 3rem 1rem;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.5), rgba(15, 23, 42, 0.5));
+            margin: 2rem 0;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .stat {
+            padding: 1.5rem;
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .stat h3 {
+            font-size: 2.5rem;
+            color: var(--blue);
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+        .stat p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+        .download-section {
+            margin-top: 4rem;
+            padding: 3rem;
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        .download-section p {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+        }
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 1rem 3rem;
+            background: linear-gradient(90deg, var(--purple), var(--blue));
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 173, 255, 0.4);
+            animation: bounce 1.5s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        .download-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 20px;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(25deg);
+            transition: all 0.5s;
+        }
+        .download-btn:hover::after {
+            left: 120%;
+        }
+        .download-btn:hover {
+            background: linear-gradient(90deg, var(--blue), var(--purple));
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(0, 173, 255, 0.6);
+        }
+        .android-logo {
+            font-size: 1.8rem;
+            color: var(--blue);
+            animation: pulseIcon 1.5s ease-in-out infinite;
+        }
+        footer {
+            padding: 3rem 1rem 2rem;
+            background: rgba(15, 23, 42, 0.9);
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-top: 4rem;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: var(--blue);
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+            opacity: 0;
+        }
+        .footer-links a:hover {
+            color: var(--purple);
+            transform: translateY(-3px);
+        }
+        footer p {
+            opacity: 0;
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 99;
+        }
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .back-to-top:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Telegram Notification Popup */
+        .notification-popup {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            max-width: 340px;
+            background-color: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            z-index: 2000;
+            box-shadow: 0 0 15px rgba(147, 51, 234, 0.5), 0 0 30px rgba(0, 173, 255, 0.3);
+            border: 1px solid rgba(147, 51, 234, 0.3);
+            transform: translateX(120%);
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            overflow: hidden;
+        }
+        .notification-popup.show {
+            transform: translateX(0);
+            opacity: 1;
+            animation: pulse 3s infinite;
+        }
+        .notification-content {
+            position: relative;
+            z-index: 2;
+        }
+        .notification-content p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        .notification-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+        .join-btn, .already-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .join-btn {
+            background: linear-gradient(135deg, var(--purple), var(--blue));
+            color: white;
+            box-shadow: 0 3px 10px rgba(147, 51, 234, 0.4);
+        }
+        .already-btn {
+            background-color: transparent;
+            color: var(--text-light);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .join-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(147, 51, 234, 0.6);
+        }
+        .already-btn:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        .notification-popup::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(147, 51, 234, 0.1), transparent 70%);
+            z-index: 1;
+            animation: rotate 15s linear infinite;
+        }
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes glowText {
+            0% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); transform: scale(1); }
+            100% { text-shadow: 0 0 20px rgba(0, 173, 255, 0.8), 0 0 30px rgba(147, 51, 234, 0.5); transform: scale(1.02); }
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            60% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 15px rgba(147, 51, 234, 0.5), 0 0 30px rgba(0, 173, 255, 0.3); }
+            50% { box-shadow: 0 0 25px rgba(147, 51, 234, 0.7), 0 0 45px rgba(0, 173, 255, 0.5); }
+            100% { box-shadow: 0 0 15px rgba(147, 51, 234, 0.5), 0 0 30px rgba(0, 173, 255, 0.3); }
+        }
+        @keyframes pulseIcon {
+            0% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.2) rotate(5deg); }
+            100% { transform: scale(1) rotate(0deg); }
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes fadeInLeft {
+            0% { transform: translateX(-50px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes fadeInRight {
+            0% { transform: translateX(50px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes slideInLeft {
+            0% { transform: translateX(-50px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes slideInRight {
+            0% { transform: translateX(50px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes wave {
+            0% { transform: translateX(-50%) scaleX(1); }
+            50% { transform: translateX(-50%) scaleX(1.2); }
+            100% { transform: translateX(-50%) scaleX(1); }
+        }
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            header p { font-size: 1.2rem; }
+            .hero-section { padding: 3rem 1rem; width: 90%; }
+            .hero-section h2 { font-size: 2rem; }
+            section h2 { font-size: 2.2rem; }
+            .feature h3 { font-size: 1.5rem; }
+            .feature p { font-size: 1rem; }
+            .download-btn, .hero-cta { font-size: 1.1rem; padding: 0.8rem 2rem; }
+            .nav-links { gap: 1rem; }
+            .nav-links a { font-size: 0.9rem; }
+            .nav-download-btn { font-size: 0.9rem; padding: 0.4rem 1rem; }
+            .nav-logo img { width: 30px; height: 30px; }
+            .nav-logo span { font-size: 1.2rem; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .notification-popup {
+                max-width: calc(100% - 40px);
+                right: 20px;
+                left: 20px;
+            }
+            .notification-buttons {
+                flex-direction: column;
+            }
+            .footer-links { gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-progress"></div>
+    <div class="bg-effect" id="bgEffect"></div>
+    
+    <!-- Telegram Notification Popup -->
+    <div class="notification-popup" id="telegramPopup">
+        <div class="notification-content">
+            <p><i class="fab fa-telegram"></i> Join our Telegram channel for exclusive VPN updates 📢</p>
+            <div class="notification-buttons">
+                <button class="join-btn"><i class="fab fa-telegram"></i> Join Now</button>
+                <button class="already-btn"><i class="fas fa-check"></i> Already Joined</button>
+            </div>
+        </div>
+    </div>
+    
+    <header id="home">
+        <div class="header-container">
+            <div class="nav-bar" id="navbar">
+                <div class="nav-logo">
+                    <img src="/logo.png" alt="FGS Tunnel Logo">
+                    <span>FGS Tunnel</span>
+                </div>
+                <div class="nav-right">
+                    <div class="nav-links">
+                        <a href="#home">Home 🏠</a>
+                        <a href="#features">Features ✨</a>
+                        <a href="https://t.me/redirectsio">Telegram <i class="fab fa-telegram"></i> </a>
+                    </div>
+                    <a href="#download" class="nav-download-btn">Download 📲</a>
+                </div>
+            </div>
+            <h1>FGS Tunnel</h1>
+            <p class="tagline">Your Gateway to Secure 🔒 & Free Internet 🌐</p>
+            <p class="subtitle">VPN App</p>
+        </div>
+    </header>
+
+    <div class="hero-section">
+        <h2>Experience Freedom Online 🌟</h2>
+        <p>Unlock the internet with FGS Tunnel VPN! Enjoy secure browsing, unrestricted access, and lightning-fast speeds—all for free. 🚀</p>
+        <a href="#download" class="hero-cta">Get Started Now ⬇️</a>
+    </div>
+
+    <section id="features">
+        <h2>Why Choose Our Free Internet VPN 🌍</h2>
+        <p>We Provide Jio Non Recharge Free Internet All India 📡</p>
+
+        <div class="features-grid">
+            <div class="feature">
+                <h3><i class="fas fa-shield-alt"></i> Military-Grade Encryption 🔐</h3>
+                <p>Your data is protected with AES-256 encryption, the same standard used by governments and security experts worldwide. 🛡️</p>
+            </div>
+
+            <div class="feature">
+                <h3><i class="fas fa-tachometer-alt"></i> Speed is Reliable and Manageable ⚡</h3>
+                <p>Our global network of high-speed servers ensures you can stream, browse, and download without lag or buffering. 🚀</p>
+            </div>
+
+            <div class="feature">
+                <h3><i class="fas fa-globe"></i> Global Server Network 🌎</h3>
+                <script async="async" data-cfasync="false" src="//pl26887262.profitableratecpm.com/05fbd7306ebdda26bac375f0956b3e8c/invoke.js"></script>
+<div id="container-05fbd7306ebdda26bac375f0956b3e8c"></div>
+                <p>Access content from anywhere with servers in 50+ countries. Bypass geo-restrictions with a single click. 📍</p>
+            </div>
+
+            <div class="feature">
+                <h3><i class="fas fa-user-secret"></i> Strict No-Logs Policy 🚫</h3>
+                <p>We never track, store, or share your online activity. Your privacy is our top priority. 🔒</p>
+            </div>
+
+            <div class="feature">
+                <h3><i class="fas fa-gift"></i> More Importantly It's 💯 Free 🎉</h3>
+                <p>Enjoy premium VPN features without paying a cent. No hidden fees or premium paywalls. 🤑</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="stats-section">
+        <div class="stats-grid">
+            <div class="stat">
+                <h3>50+</h3>
+                <p>Countries Covered 🌍</p>
+            </div>
+            <div class="stat">
+                <h3>600+</h3>
+                <p>High-Speed Servers ⚡</p>
+            </div>
+            <div class="stat">
+                <h3>12k+</h3>
+                <p>Happy Users 😊</p>
+            </div>
+        </div>
+    </div>
+
+    <section id="download">
+        <div class="download-section">
+            <h2>Download FreeInternet VPN 📲</h2>
+            <p><i class="fab fa-android android-logo"></i> Android 🤖</p>
+            <a href="https://t.me/Chocolatefluffybot?start=Z2V0LTc0OTU4MTc1NjcxNjcxNg" class="download-btn">Download Now ⬇️</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#privacy">Privacy Policy 📜</a>
+            <a href="#terms">Terms of Service 📝</a>
+            <a href="https://t.me/redirectsio">Support 🆘</a>
+        </div>
+        <p>© 2025 FGS Tunnel. All Rights Reserved. 🌟</p>
+    </footer>
+    
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+<script async="async" data-cfasync="false" src="//pl26887262.profitableratecpm.com/05fbd7306ebdda26bac375f0956b3e8c/invoke.js"></script>
+<div id="container-05fbd7306ebdda26bac375f0956b3e8c"></div>
+    <script>
+        // Create particles for background effect
+        function createParticles() {
+            const bgEffect = document.getElementById('bgEffect');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random position
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                // Random size
+                const size = Math.random() * 5 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Random animation delay
+                particle.style.animationDelay = `${Math.random() * 10}s`;
+                
+                bgEffect.appendChild(particle);
+            }
+        }
+        
+        // Scroll progress indicator
+        function setupScrollProgress() {
+            const scrollProgress = document.querySelector('.scroll-progress');
+            
+            window.addEventListener('scroll', () => {
+                const scrollTop = document.documentElement.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (scrollTop / scrollHeight) * 100;
+                
+                scrollProgress.style.width = `${scrolled}%`;
+            });
+        }
+        
+        // Sticky navbar
+        function setupStickyNav() {
+            const navbar = document.getElementById('navbar');
+            const sticky = navbar.offsetTop;
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > sticky) {
+                    navbar.classList.add('sticky');
+                } else {
+                    navbar.classList.remove('sticky');
+                }
+            });
+        }
+        
+        // Smooth scrolling
+        function setupSmoothScrolling() {
+            document.querySelectorAll('a[href^="https://t.me/redirectsio"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+        
+        // Back to top button
+        function setupBackToTop() {
+            const backToTop = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('show');
+                } else {
+                    backToTop.classList.remove('show');
+                }
+            });
+            
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+        
+        // Animation on scroll
+        function setupScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeInUp 1s ease-out forwards';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            document.querySelectorAll('section h2, section > p, .feature, .stat, .download-section, .footer-links a, footer p').forEach(el => {
+                observer.observe(el);
+            });
+        }
+        
+        // Telegram popup functionality
+        function setupTelegramPopup() {
+            const telegramPopup = document.getElementById('telegramPopup');
+            const joinBtn = telegramPopup.querySelector('.join-btn');
+            const alreadyBtn = telegramPopup.querySelector('.already-btn');
+            
+            // Show popup after 5 seconds
+            setTimeout(() => {
+                telegramPopup.classList.add('show');
+            }, 5000);
+            
+            // Join button functionality - redirect to Telegram
+            joinBtn.addEventListener('click', () => {
+                window.open('https://t.me/fgstunnel', '_blank');
+                telegramPopup.classList.remove('show');
+                // Store in localStorage to prevent showing again
+                localStorage.setItem('telegramPopupShown', 'true');
+            });
+            
+            // Already joined button - just close the popup
+            alreadyBtn.addEventListener('click', () => {
+                telegramPopup.classList.remove('show');
+                // Store in localStorage to prevent showing again
+                localStorage.setItem('telegramPopupShown', 'true');
+            });
+            
+            // Check if user has already interacted with popup
+            if (localStorage.getItem('telegramPopupShown') === 'true') {
+                telegramPopup.style.display = 'none';
+            }
+        }
+        
+        // Initialize everything when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            setupScrollProgress();
+            setupStickyNav();
+            setupSmoothScrolling();
+            setupBackToTop();
+            setupScrollAnimations();
+            setupTelegramPopup();
+        });
+    </script>
+</body>
+</html>

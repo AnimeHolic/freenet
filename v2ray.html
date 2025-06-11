@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free V2Ray Servers | Secure & High-Speed Connections | FreeInternet</title>
+    <meta name="description" content="Get free V2Ray servers for secure, high-speed internet access. Fast connections with V2Ray protocol for enhanced privacy and bypassing restrictions.">
+    <meta name="keywords" content="free v2ray, v2ray server, v2ray configuration, secure proxy, free vpn alternative, v2ray download">
+    <meta name="author" content="FreeInternet">
+    <meta name="robots" content="index, follow">
+    <style>
+        :root {
+            --primary: #7e22ce;
+            --primary-dark: #6b21a8;
+            --secondary: #a855f7;
+            --accent: #8b5cf6;
+            --light: #f5f3ff;
+            --dark: #1e1b4b;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+            --border-radius: 12px;
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding-bottom: 60px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.8rem;
+            text-decoration: none;
+            color: white;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 5px 0;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: white;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: var(--transition);
+        }
+
+        nav a:hover::after, nav a.active::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 20px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjEwIiBjeT0iMTAiIHI9IjEiIGZpbGw9IiNlZGU5ZmUiIGZpbGwtb3BhY2l0eT0iMC4zIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+');
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin: 0 auto 30px;
+            color: var(--gray);
+            max-width: 700px;
+        }
+
+        .v2ray-explained {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 50px 0;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .v2ray-info {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .v2ray-info h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .v2ray-info ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .v2ray-info li {
+            padding: 10px 0;
+            border-bottom: 1px dashed var(--light-gray);
+            display: flex;
+            align-items: center;
+        }
+
+        .v2ray-info li::before {
+            content: '✓';
+            color: var(--accent);
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .v2ray-diagram {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .diagram-box {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            display: inline-block;
+        }
+
+        .diagram-line {
+            margin: 20px 0;
+            height: 2px;
+            background: linear-gradient(to right, var(--light-gray), var(--accent), var(--light-gray));
+            position: relative;
+        }
+
+        .diagram-line::before, .diagram-line::after {
+            content: '➤';
+            position: absolute;
+            top: -12px;
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+
+        .diagram-line::before {
+            left: -25px;
+        }
+
+        .diagram-line::after {
+            right: -25px;
+            transform: rotate(180deg);
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 14px 32px;
+            border-radius: 50px;
+            margin-top: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(126, 34, 206, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(126, 34, 206, 0.4);
+        }
+
+        /* Server Section */
+        .server-section {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--dark);
+            display: inline-block;
+            background: white;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--light-gray);
+            z-index: 0;
+        }
+
+        .filter-bar {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: white;
+            border: 1px solid var(--light-gray);
+            border-radius: 30px;
+            padding: 8px 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .protocol-badge {
+            display: inline-block;
+            background: rgba(168, 85, 247, 0.15);
+            color: var(--primary);
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .server-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .server-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            border-top: 4px solid var(--primary);
+        }
+
+        .server-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+        }
+
+        .server-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 18px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .server-header::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 50%;
+        }
+
+        .flag {
+            width: 36px;
+            height: 24px;
+            margin-right: 12px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .server-status {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent);
+            color: white;
+            font-size: 0.8rem;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .server-body {
+            padding: 20px;
+        }
+
+        .server-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: var(--primary);
+            min-width: 90px;
+        }
+
+        .info-value {
+            text-align: right;
+            color: var(--dark);
+            font-weight: 500;
+            font-family: monospace;
+            word-break: break-all;
+        }
+
+        .server-stats {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stat {
+            flex: 1;
+            text-align: center;
+            background: var(--light);
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        .stat-value {
+            color: var(--primary);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .btn-download {
+            display: block;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-download:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-download::after {
+            content: '↓';
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: var(--transition);
+        }
+
+        .btn-download:hover::after {
+            transform: translateY(-50%) scale(1.2);
+        }
+
+        /* How to Use Section */
+        .how-to-use {
+            background: white;
+            padding: 60px 0;
+            margin-top: 40px;
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            counter-reset: step-counter;
+        }
+
+        .step-card {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 30px 20px 20px;
+            position: relative;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .step-card::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .step-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .server-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-bar {
+                gap: 10px;
+            }
+            
+            .v2ray-explained {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">🔒</span>
+                <span>FreeInternet</span>
+            </a>
+            <nav>
+                
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Free V2Ray Servers for Secure & Fast Internet</h1>
+            <p>Access the web freely with our high-performance V2Ray servers. Enjoy enhanced security, faster speeds, and reliable connections.</p>
+            <a href="#servers" class="btn-primary">Get Free V2Ray Configs</a>
+            
+            <div class="v2ray-explained">
+                <div class="v2ray-info">
+                    <h2>Why Choose V2Ray?</h2>
+                    <p>V2Ray is a next-generation proxy protocol designed for security, privacy, and performance.</p>
+                    <ul>
+                        <li>Advanced encryption protocols</li>
+                        <li>Traffic obfuscation to bypass restrictions</li>
+                        <li>Multi-protocol support (VMess, VLESS, etc.)</li>
+                        <li>Faster speeds than traditional VPNs</li>
+                        <li>Dynamic port switching</li>
+                    </ul>
+                </div>
+                <div class="v2ray-diagram">
+                    <div class="diagram-box">
+                        <h3>Your Device</h3>
+                    </div>
+                    <div class="diagram-line"></div>
+                    <div class="diagram-box">
+                        <h3>V2Ray Server</h3>
+                    </div>
+                    <div class="diagram-line"></div>
+                    <div class="diagram-box">
+                        <h3>Internet</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servers" class="server-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Free V2Ray Servers</h2>
+            </div>
+            
+            <div class="filter-bar">
+                <button class="filter-btn active">All Servers</button>
+                <button class="filter-btn">Asia</button>
+                <button class="filter-btn">Europe</button>
+                <button class="filter-btn">North America</button>
+                <button class="filter-btn">High Speed</button>
+            </div>
+            
+            <div class="server-container">
+                <!-- Server Card 1 -->
+                <div class="server-card">
+                    <div class="server-header">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSIyMCI+PHBhdGggZmlsbD0iI0ZGMDAwMCIgZD0iTTAgMGg0MHYyMEgweiIvPjxwYXRoIGZpbGw9IiNGRkZGMDAiIGQ9Ik0wIDBoNDB2MTBIMHoiLz48L3N2Zz4=" alt="Japan Flag" class="flag">
+                        <h3>Japan Server <span class="protocol-badge">VMess</span></h3>
+                        <div class="server-status">Online</div>
+                    </div>
+                    <div class="server-body">
+                        <div class="server-info">
+                            <span class="info-label">Provider:</span>
+                            <span class="info-value">Linode</span>
+                        </div>
+                        <div class="server-info">
+                            <span class="info-label">Expiry:</span>
+                            <span class="info-value">2023-12-31</span>
+                        </div>
+                        <div class="server-info">
+                            <span class="info-label">Address:</span>
+                            <span class="info-value">v2ray-jp.example.com</span>
+                        </div>
+                        <div class="server-info">
+                            <span class="info-label">Port:</span>
+                            <span class="info-value">443</span>
+                        </div>
+                        <div class="server-info">
+                            <span class="info-label">Protocol:</span>
+                            <span class="info-value">VMess + TLS</span>
+                        </div>
+                        
+                        <div class="server-stats">
+                            <div class="stat">
+                                <div class="stat-value">98%</div>
+                                <div>Uptime</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">64ms</div>
+                                <div>Ping</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">120</div>
+                                <div>Users</div>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="btn-download">Download V2Ray Config</a>
+                    </div>
+                </div>
+                
+                <!-- Server Card 2 -->
+                <div class="server-card">
+                    <div class="server-header">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSIyMCI+PHBhdGggZmlsbD0iIzAwM0E4NiIgZD0iTTAgMGg0MHYyMEgweiIvPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0wIDBoNDB2OEgweiIvPjxwYXRoIGZpbGw9IiNDQTAwMkIiIGQ9Ik0wIDEyaDQwdjhIMHoiLz48L3N2Zz4=" alt="Germany Flag" class="flag">
+                        <h3>Germany Server <span class="protocol-badge">VLESS</span></h3>
+                        <div class="server-status">Online</div>
+                    </div>
+                    <div class="server-body">
+                        <div class="server-info">
+                            <span class="info-label">Provider:</span>
+                            <span class="info-value">Hetzner</span>
+                        </div>
+                        <div class="server-info">
+                            <span class="info-label">Expiry:</span>
+                            <span class="info-value">2023-11-30</span>
+                        </div>
+                        <div class="server-info">
+                            <span class="info-label">Address:</span>
+                            <span class="info-value">v2ray-de.example.com</span>
+                        </div>
+                        <div class="server-info">
+                            <span class="info-label">Port:</span>
+                            <span class="info-value">8443</span>
+                        </div>
+                        <div class="server-info">
+                            <span class="info-label">Protocol:</span>
+                            <span class="info-value">VLESS + XTLS</span>
+                        </div>
+                        
+                        <div class="server-stats">
+                            <div class="stat">
+                                <div class="stat-value">99%</div>
+                                <div>Uptime</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">42ms</div>
+                                <div>Ping</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">85</div>
+                                <div>Users</div>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="btn-download">Download V2Ray Config</a>
+                    </div>
+                </div>
+                
+                <!-- Server Card 3 -->
+                <div class="server-card">
+                    <div class="server-header">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSIyMCI+PHBhdGggZmlsbD0iIzEyMzI1QyIgZD0iTTAgMGg0MHYyMEgweiIvPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0xNiAwaDh2MjBoLTh6Ii8+PHBhdGggZmlsbD0iI0Y3MDEwMiIgZD0iTTAgMGg0MHY0SDB6TTAgOGg0MHY0SDB6TTAgMTZoNDB2NEgwek0wIDI0aDQwdjRIMHoiLz48cGF0aCBmaWxsPSIjQ0EwMDI4IiBkPSJNMTYgMGg4djIwaC04eiIvPjwvc3ZnPg==" alt="USA Flag" class="flag">
+                        <h3>USA Server <span class="protocol-badge">VMess</span></h3>
+                        <div class="server-status">Online</div>
+                    </div>
+                    <div class="server-body">
+                        <div class="server-info">
+                            <span class="info-label">Provider:</span>
+                            <span class="info-value">DigitalOcean</span>
+                        </div>
+                        <div class="server-info">
+                            <span class="info-label">Expiry:</span>
+                            <span class="info-value">2023-12-15</span>
+                        </div>
+                        <div class="server-info">
+                            <span class="info-label">Address:</span>
+                            <span class="info-value">v2ray-us.example.com</span>
+                        </div>
+                        <div class="server-info">
+                            <span class="info-label">Port:</span>
+                            <span class="info-value">443</span>
+                        </div>
+                        <div class="server-info">
+                            <span class="info-label">Protocol:</span>
+                            <span class="info-value">VMess + WS + TLS</span>
+                        </div>
+                        
+                        <div class="server-stats">
+                            <div class="stat">
+                                <div class="stat-value">97%</div>
+                                <div>Uptime</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">28ms</div>
+                                <div>Ping</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">110</div>
+                                <div>Users</div>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="btn-download">Download V2Ray Config</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-to-use">
+        <div class="container">
+            <div class="section-title">
+                <h2>How to Use V2Ray</h2>
+            </div>
+            
+            <div class="steps-container">
+                <div class="step-card">
+                    <h3>Download Client</h3>
+                    <p>Get V2Ray client for your platform: Windows, macOS, Linux, Android, or iOS.</p>
+                </div>
+                
+                <div class="step-card">
+                    <h3>Import Config</h3>
+                    <p>Download the configuration file and import it to your V2Ray client application.</p>
+                </div>
+                
+                <div class="step-card">
+                    <h3>Connect</h3>
+                    <p>Select the server you want to use and click connect to establish a secure connection.</p>
+                </div>
+                
+                <div class="step-card">
+                    <h3>Browse Securely</h3>
+                    <p>Enjoy private, unrestricted internet access with enhanced security and speed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>FreeInternet</h3>
+                    <p>Providing free and secure internet access solutions since 2018. Our mission is to make privacy tools accessible to everyone.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">V2Ray Servers</a></li>
+                        <li><a href="#">SSH Servers</a></li>
+                        <li><a href="#">VPN Services</a></li>
+                        <li><a href="#">Configuration Guides</a></li>
+                    </ul>
+                </div>
+                
+            
+            <div class="copyright">
+                &copy; 2023 FreeInternet. All rights reserved. This service provides free V2Ray access for educational purposes only.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Filter button functionality
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                button.classList.add('active');
+                
+                // In a real implementation, this would filter the server cards
+                // For this demo, we're just showing a message
+                console.log('Filtering V2Ray servers by: ' + button.textContent);
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
