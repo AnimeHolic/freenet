@@ -1,9 +1,6 @@
 {
   "scripts": {
-    "build": "echo 'No build needed for static HTML' && exit 0",
+    "build": "vite build",
     "dev": "vite"
-  },
-  "devDependencies": {
-    "vite": "^6.3.5"
   }
 }
