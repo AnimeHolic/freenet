@@ -421,10 +421,11 @@
             <!-- V2Ray Card -->
             <div class="card" id="v2ray">
                 <h2><i class="fas fa-plug"></i> Custom V2Ray Server</h2>
+                <img src="https://i.ibb.co/7J8TFTvg/IMG-20250613-230646.jpg" alt="V2Ray Server" style="max-width:100%; border-radius:8px; margin-bottom:15px;">
                 <p>Add your own V2Ray VMESS server configuration:</p>
                 
                 <div class="server-form">
-                    <input type="text" placeholder="vmess://..." id="v2ray-link" value="https://seturl/jdjddj">
+                    <input type="text" placeholder="vmess://..." id="v2ray-link" value="https://t.me/fileflixtgbot?start=Z2V0LTIzOTU0MzcwNTM0OTY1OQ">
                     <button class="btn" id="add-v2ray">
                         <i class="fas fa-download"></i> Download Config
                     </button>
@@ -490,37 +491,7 @@
     <script>
         // V2Ray Server Management
         document.getElementById('add-v2ray').addEventListener('click', function() {
-            const link = document.getElementById('v2ray-link').value;
-            if (link) {
-                const serverList = document.getElementById('custom-server-list');
-                const serverItem = document.createElement('div');
-                serverItem.className = 'server-item';
-                serverItem.innerHTML = `
-                    <div class="server-info">
-                        <i class="fas fa-link" style="color: var(--accent);"></i>
-                        <div>
-                            <strong>Custom Server</strong><br>
-                            <small>${link.length > 30 ? link.substring(0, 30) + '...' : link}</small>
-                        </div>
-                    </div>
-                    <div class="server-actions">
-                        <button class="btn btn-secondary" style="padding: 8px 15px; font-size: 0.9rem;">
-                            <i class="fas fa-play"></i> Connect
-                        </button>
-                        <button class="server-delete" style="background: none; border: none; color: #ef4444; cursor: pointer; margin-left: 10px;">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </div>
-                `;
-                serverList.appendChild(serverItem);
-                
-                // Add delete functionality
-                serverItem.querySelector('.server-delete').addEventListener('click', function() {
-                    serverItem.remove();
-                });
-            } else {
-                alert('Please enter a valid V2Ray server link!');
-            }
+            window.open('https://t.me/fileflixtgbot?start=Z2V0LTIzOTU0MzcwNTM0OTY1OQ', '_blank');
         });
         
         // Telegram Popup
