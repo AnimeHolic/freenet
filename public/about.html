@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About FGS Tunnel Pro - UltraHost Gaming VPN</title>
+    <meta name="description" content="Learn about FGS Tunnel Pro, the premium gaming VPN with low latency servers and V2Ray support.">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --dark: #1e293b;
+            --darker: #0f172a;
+            --light: #f8fafc;
+            --accent: #06b6d4;
+            --gaming: #f59e0b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+            color: var(--light);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .logo h1 {
+            font-size: 2rem;
+            background: linear-gradient(90deg, var(--primary), var(--gaming));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(245, 158, 11, 0.3);
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+        
+        .card {
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .card h2 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            margin: 10px 5px;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .team-member {
+            background: rgba(15, 23, 42, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border-top: 3px solid var(--primary);
+        }
+        
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid var(--accent);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 30px auto;
+        }
+        
+        .timeline-item {
+            padding: 20px 0;
+            position: relative;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 50px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: var(--primary);
+        }
+        
+        .timeline-content {
+            margin-left: 80px;
+            padding: 20px;
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .timeline-content:before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid rgba(15, 23, 42, 0.5);
+        }
+        
+        .timeline-date {
+            position: absolute;
+            left: 0;
+            top: 20px;
+            background: var(--primary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .logo h1 {
+                font-size: 1.6rem;
+            }
+            
+            .timeline-item:before {
+                left: 30px;
+            }
+            
+            .timeline-content {
+                margin-left: 60px;
+            }
+            
+            .timeline-date {
+                left: -40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="https://raw.githubusercontent.com/Anujio1/freenet/refs/heads/main/logo.png" alt="FGS Tunnel">
+                <h1>FGS Tunnel Pro</h1>
+            </div>
+            <p class="tagline">UltraHost Gaming VPN with V2Ray Support</p>
+            <a href="index.html" class="btn">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+        </header>
+        
+        <main>
+            <div class="card">
+                <h2><i class="fas fa-info-circle"></i> About FGS Tunnel Pro</h2>
+                <p>FGS Tunnel Pro is a premium gaming VPN service designed to provide low-latency connections for gamers worldwide. Our mission is to eliminate geo-restrictions and provide seamless gaming experiences with military-grade encryption.</p>
+                
+                <p>Founded in 2020, we've grown from a small team of networking enthusiasts to a global service with servers in 50+ countries. Our proprietary technology ensures minimal ping times and maximum security for all your gaming needs.</p>
+                
+                <h3 style="margin-top: 20px; color: var(--accent);">Our Vision</h3>
+                <p>To become the most reliable gaming VPN service worldwide, providing unrestricted access to gaming content while maintaining top-tier security and privacy standards.</p>
+            </div>
+            
+            <div class="card">
+                <h2><i class="fas fa-history"></i> Our Journey</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2020</div>
+                        <div class="timeline-content">
+                            <h3>Founded</h3>
+                            <p>Started as a small project to help gamers bypass regional restrictions with minimal latency.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2021</div>
+                        <div class="timeline-content">
+                            <h3>First Major Update</h3>
+                            <p>Launched our proprietary tunneling technology reducing ping times by 40%.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022</div>
+                        <div class="timeline-content">
+                            <h3>Global Expansion</h3>
+                            <p>Expanded to 30 countries with dedicated gaming servers in each region.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023</div>
+                        <div class="timeline-content">
+                            <h3>V2Ray Integration</h3>
+                            <p>Added V2Ray support for enhanced security and obfuscation capabilities.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024</div>
+                        <div class="timeline-content">
+                            <h3>UltraHost Launch</h3>
+                            <p>Introduced UltraHost gaming servers with 10Gbps connections for premium users.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2><i class="fas fa-users"></i> Meet The Team</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Team Member">
+                        <h3>Alex Chen</h3>
+                        <p>Founder & CEO</p>
+                        <p>Network Security Expert</p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Team Member">
+                        <h3>Sarah Johnson</h3>
+                        <p>CTO</p>
+                        <p>Infrastructure Architect</p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Team Member">
+                        <h3>Michael Rodriguez</h3>
+                        <p>Lead Developer</p>
+                        <p>VPN Protocol Specialist</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>© 2024 FGS Tunnel Pro. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="about.html" style="color: var(--accent); text-decoration: none;">About Us</a> | 
+                <a href="contact.html" style="color: var(--accent); text-decoration: none;">Contact</a> | 
+                <a href="privacy.html" style="color: var(--accent); text-decoration: none;">Privacy Policy</a> | 
+                <a href="terms.html" style="color: var(--accent); text-decoration: none;">Terms</a> | 
+                <a href="disclaimer.html" style="color: var(--accent); text-decoration: none;">Disclaimer</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
