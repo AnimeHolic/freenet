@@ -21,7 +21,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             padding: 20px;
         }
         
@@ -33,8 +32,7 @@
             padding: 30px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            margin: auto;
         }
         
         /* Header Styles */
@@ -139,6 +137,12 @@
             margin-top: 20px;
             font-size: 0.9rem;
             opacity: 0.8;
+            width: 100%;
+        }
+        
+        footer p {
+            margin: 0;
+            padding: 0;
         }
         
         footer a {
@@ -179,15 +183,8 @@
         @media (max-width: 480px) {
             .container {
                 padding: 15px;
-            margin: 10px;
-            width: calc(100% - 20px);
-            box-sizing: border-box;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: normal;
-            word-wrap: break-word;
-        }
-        
+            }
+            
             .logo {
                 width: 80px;
                 height: 80px;
@@ -222,7 +219,6 @@
             
             footer {
                 font-size: 0.8rem;
-                line-height: 1.4;
             }
         }
     </style>
@@ -266,14 +262,8 @@
         document.addEventListener('DOMContentLoaded', function() {
             const installBtn = document.getElementById('installBtn');
             
-            // For demo purposes, we'll simulate a click event
             installBtn.addEventListener('click', function(e) {
-                // In a real implementation, this would download the APK
-                // For now, we'll just show an alert
                 alert("In a real implementation, this would download the FGS VPN APK file. Replace the href with your actual APK download link.");
-                
-                // Uncomment the following line for actual implementation:
-                // window.location.href = "https://yourdomain.com/path/to/fgs-vpn.apk";
             });
         });
     </script>
