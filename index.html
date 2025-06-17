@@ -169,6 +169,19 @@
             opacity: 0.8;
         }
         
+        /* AdSense Container (Kept for spacing, but can be removed if not needed) */
+        .ad-container {
+            width: 100%;
+            margin: 30px 0;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
         /* Footer */
         footer {
             margin-top: 30px;
@@ -374,3 +387,21 @@
                         setTimeout(function() {
                             downloadComplete.style.display = 'block';
                             
+                            // For demo purposes, after 3 seconds go to vpn.html
+                            setTimeout(function() {
+                                window.location.href = 'vpn.html';
+                            }, 3000);
+                        }, 500);
+                    }
+                }, 300);
+            });
+            
+            // Handle install link
+            installLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.location.href = 'vpn.html';
+            });
+        });
+    </script>
+</body>
+</html>
