@@ -3,406 +3,732 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download FGS VPN - Fast & Secure Connection</title>
-    <meta name="description" content="Download FGS VPN for unlimited, secure browsing. Protect your privacy and access content worldwide.">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7549211605820722" crossorigin="anonymous"></script>
+    <title>FGS VPN Pro - Download Free High-Speed Gaming VPN APK</title>
+    <meta name="description" content="Download FGS VPN Pro APK for Android - Free high-speed gaming VPN with unlimited bandwidth, low latency servers, and V2Ray support.">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Global Styles */
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --dark: #1e293b;
+            --darker: #0f172a;
+            --light: #f8fafc;
+            --accent: #06b6d4;
+            --gaming: #f59e0b;
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
         
         body {
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
-            color: #fff;
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+            color: var(--light);
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
+            line-height: 1.6;
         }
         
         .container {
-            max-width: 800px;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Ad Container */
+        .ad-container {
+            background: rgba(30, 41, 59, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border: 1px solid rgba(255,255,255,0.1);
             text-align: center;
+            overflow: hidden;
+        }
+        
+        .ad-label {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
             position: relative;
             overflow: hidden;
         }
         
-        /* Header Styles */
-        header {
-            margin-bottom: 30px;
-        }
-        
         .logo {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 20px;
-            background: #fff;
-            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        .logo img {
-            width: 80px;
-            height: 80px;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            background: linear-gradient(to right, #ff8a00, #e52e71);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        p.subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
+            gap: 10px;
             margin-bottom: 20px;
         }
         
-        /* Features Section */
-        .features {
+        .logo img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .logo h1 {
+            font-size: 2.2rem;
+            background: linear-gradient(90deg, var(--primary), var(--gaming));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(245, 158, 11, 0.3);
+        }
+        
+        .tagline {
+            font-size: 1.3rem;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+        
+        .version-badge {
+            display: inline-block;
+            background: rgba(6, 182, 212, 0.2);
+            color: var(--accent);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            border: 1px solid var(--accent);
+        }
+        
+        .download-card {
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px 0;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            border-top: 5px solid var(--gaming);
+        }
+        
+        .download-card h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .download-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            margin: 15px 10px;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(99, 102, 241, 0.4);
+        }
+        
+        .btn-gaming {
+            background: linear-gradient(90deg, var(--gaming), #ef4444);
+            animation: pulse-gaming 2s infinite;
+        }
+        
+        .btn-secondary {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             margin: 30px 0;
         }
         
-        .feature {
-            background: rgba(255, 255, 255, 0.1);
+        .feature-card {
+            background: rgba(15, 23, 42, 0.5);
             padding: 20px;
             border-radius: 10px;
+            border-left: 3px solid var(--primary);
             transition: transform 0.3s;
         }
         
-        .feature:hover {
+        .feature-card:hover {
             transform: translateY(-5px);
         }
         
-        .feature i {
+        .feature-card i {
             font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+        .feature-card h3 {
             margin-bottom: 10px;
-            color: #4CAF50;
+            color: var(--light);
         }
         
-        .feature h3 {
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-        
-        /* Download Button */
-        .download-btn {
-            display: inline-block;
-            background: linear-gradient(45deg, #FF512F, #DD2476);
-            color: white;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin: 20px 0;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(221, 36, 118, 0.4);
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .download-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(221, 36, 118, 0.6);
-        }
-        
-        .download-btn:active {
-            transform: translateY(1px);
-        }
-        
-        .download-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: 0.5s;
-        }
-        
-        .download-btn:hover::before {
-            left: 100%;
-        }
-        
-        /* Stats Section */
-        .stats {
+        .screenshots {
             display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
+            gap: 15px;
+            overflow-x: auto;
+            padding: 15px 0;
             margin: 30px 0;
+            scrollbar-width: thin;
         }
         
-        .stat {
-            text-align: center;
-            padding: 15px;
-        }
-        
-        .stat h3 {
-            font-size: 2.5rem;
-            margin-bottom: 5px;
-            color: #4CAF50;
-        }
-        
-        .stat p {
-            opacity: 0.8;
-        }
-        
-        /* AdSense Container (Kept for spacing, but can be removed if not needed) */
-        .ad-container {
-            width: 100%;
-            margin: 30px 0;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
+        .screenshot {
+            min-width: 250px;
             border-radius: 10px;
-            min-height: 100px;
+            border: 2px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .screenshot:hover {
+            transform: scale(1.03);
+        }
+        
+        .how-to-use {
+            margin: 40px 0;
+        }
+        
+        .step {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+        
+        .step-number {
+            background: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0;
+            font-weight: bold;
         }
         
-        /* Footer */
+        .step-content {
+            background: rgba(15, 23, 42, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            flex-grow: 1;
+        }
+        
+        .testimonials {
+            margin: 40px 0;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .testimonial {
+            background: rgba(30, 41, 59, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .testimonial-author img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        
+        .faq-section {
+            margin: 40px 0;
+        }
+        
+        .faq-item {
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 15px;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: var(--accent);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            margin-top: 10px;
+            display: none;
+        }
+        
+        .faq-answer.show {
+            display: block;
+        }
+        
         footer {
-            margin-top: 30px;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 40px;
+            color: #94a3b8;
             font-size: 0.9rem;
-            opacity: 0.7;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
         
-        /* Responsive Design */
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: #cbd5e1;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent);
+        }
+        
+        @keyframes pulse-gaming {
+            0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(245, 158, 11, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+        }
+        
         @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .features {
-                grid-template-columns: 1fr;
-            }
-            
-            .download-btn {
-                padding: 12px 30px;
-                font-size: 1rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
             .container {
                 padding: 15px;
             }
             
-            .logo {
-                width: 80px;
-                height: 80px;
+            .logo h1 {
+                font-size: 1.8rem;
             }
             
-            .logo img {
-                width: 50px;
-                height: 50px;
+            .tagline {
+                font-size: 1.1rem;
             }
             
-            h1 {
-                font-size: 1.5rem;
-            }
-            
-            p.subtitle {
+            .btn {
+                padding: 12px 25px;
                 font-size: 1rem;
             }
-        }
-        
-        /* Loading Page Styles */
-        .loading-page {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 1000;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-        }
-        
-        .loading-spinner {
-            width: 50px;
-            height: 50px;
-            border: 5px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            border-top-color: #4CAF50;
-            animation: spin 1s ease-in-out infinite;
-            margin-bottom: 20px;
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        
-        .progress-bar {
-            width: 80%;
-            max-width: 300px;
-            height: 10px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 5px;
-            margin-top: 20px;
-            overflow: hidden;
-        }
-        
-        .progress {
-            height: 100%;
-            width: 0;
-            background: linear-gradient(to right, #4CAF50, #8BC34A);
-            transition: width 0.3s;
-        }
-        
-        .download-complete {
-            display: none;
-            margin-top: 20px;
-            text-align: center;
-        }
-        
-        .download-complete a {
-            color: #4CAF50;
-            text-decoration: none;
-            font-weight: bold;
+            
+            .step {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="container">
+        <!-- Top Ad -->
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="XXXXXXXXXX"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
         <header>
             <div class="logo">
-                <img src="https://raw.githubusercontent.com/Anujio1/freenet/refs/heads/main/logo.png" alt="fgs-vpn">
+                <img src="https://raw.githubusercontent.com/Anujio1/freenet/refs/heads/main/logo.png" alt="FGS Tunnel">
+                <h1>FGS VPN Pro</h1>
             </div>
-            <h1>FGS VPN</h1>
-            <p class="subtitle">Unlimited bandwidth • Military-grade encryption • No logs policy</p>
+            <p class="tagline">Ultra-Fast Gaming VPN with Unlimited Bandwidth</p>
+            <div class="version-badge">
+                <i class="fas fa-download"></i> Version 3.1.0 (18.5 MB) - Android 7.0+
+            </div>
         </header>
         
-        <div class="features">
-            <div class="feature">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Secure</h3>
-                <p>AES-256 encryption protects all your online activities</p>
+        <main>
+            <!-- Main Download Card -->
+            <div class="download-card">
+                <h2>Download FGS VPN Pro APK</h2>
+                <p>Get the fastest gaming VPN with unlimited bandwidth and low ping servers</p>
+                
+                <div class="download-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">500K+</div>
+                        <div class="stat-label">Downloads</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Countries</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">10Gbps</div>
+                        <div class="stat-label">Speed</div>
+                    </div>
+                </div>
+                
+                <a href="https://t.me/fgstunnel" class="btn btn-gaming">
+                    <i class="fas fa-download"></i> Download Now
+                </a>
+                <button class="btn btn-secondary" id="showFeatures">
+                    <i class="fas fa-star"></i> Premium Features
+                </button>
+                
+                <div style="margin-top: 20px; font-size: 0.9rem; color: #94a3b8;">
+                    <i class="fas fa-shield-alt"></i> Virus Checked | No Registration Required
+                </div>
             </div>
-            <div class="feature">
-                <i class="fas fa-bolt"></i>
-                <h3>Fast</h3>
-                <p>High-speed servers in 50+ countries worldwide</p>
+            
+            <!-- Middle Ad -->
+            <div class="ad-container">
+                <div class="ad-label">Advertisement</div>
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                     data-ad-slot="XXXXXXXXXX"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
-            <div class="feature">
-                <i class="fas fa-infinity"></i>
-                <h3>Unlimited</h3>
-                <p>No bandwidth limits or speed throttling</p>
+            
+            <!-- Key Features -->
+            <div class="features-grid" id="featuresSection">
+                <div class="feature-card">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h3>Ultra-Fast Speed</h3>
+                    <p>10Gbps servers optimized for gaming and streaming with minimal latency</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Global Servers</h3>
+                    <p>50+ countries with specialized gaming servers for lowest ping</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Military Encryption</h3>
+                    <p>AES-256 encryption protects all your traffic from hackers</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-infinity"></i>
+                    <h3>Unlimited Bandwidth</h3>
+                    <p>No speed throttling or data caps - game and stream without limits</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-plug"></i>
+                    <h3>V2Ray Support</h3>
+                    <p>Advanced protocol for bypassing strict network restrictions</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-ad"></i>
+                    <h3>Ad-Supported Free</h3>
+                    <p>Completely free with optional ads to unlock premium servers</p>
+                </div>
             </div>
-        </div>
-        
-        <button id="downloadBtn" class="download-btn">
-            <i class="fas fa-download"></i> Download FGS VPN
-        </button>
-        
-        <div class="stats">
-            <div class="stat">
-                <h3>10M+</h3>
-                <p>Downloads</p>
+            
+            <!-- Screenshots -->
+            <h2 style="margin: 40px 0 20px; color: var(--primary);">
+                <i class="fas fa-mobile-screen"></i> App Screenshots
+            </h2>
+            <div class="screenshots">
+                <img src="https://i.ibb.co/7J8TFTvg/IMG-20250613-230646.jpg" alt="FGS VPN App Screenshot 1" class="screenshot">
+                <img src="https://i.ibb.co/7J8TFTvg/IMG-20250613-230646.jpg" alt="FGS VPN App Screenshot 2" class="screenshot">
+                <img src="https://i.ibb.co/7J8TFTvg/IMG-20250613-230646.jpg" alt="FGS VPN App Screenshot 3" class="screenshot">
+                <img src="https://i.ibb.co/7J8TFTvg/IMG-20250613-230646.jpg" alt="FGS VPN App Screenshot 4" class="screenshot">
             </div>
-            <div class="stat">
-                <h3>50+</h3>
-                <p>Countries</p>
+            
+            <!-- How to Use -->
+            <div class="how-to-use">
+                <h2 style="margin-bottom: 20px; color: var(--primary);">
+                    <i class="fas fa-book"></i> How to Install & Use
+                </h2>
+                
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Download the APK</h3>
+                        <p>Click the download button above to get the FGS VPN Pro APK file (18.5 MB)</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Install the App</h3>
+                        <p>Open the downloaded APK file and install (enable "Install Unknown Sources" if prompted)</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Launch and Connect</h3>
+                        <p>Open the app, select your preferred server, and tap "Connect"</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Enjoy Unlimited VPN</h3>
+                        <p>Play games, stream content, and browse with complete privacy</p>
+                    </div>
+                </div>
             </div>
-            <div class="stat">
-                <h3>99.9%</h3>
-                <p>Uptime</p>
+            
+            <!-- Testimonials -->
+            <div class="testimonials">
+                <h2 style="margin-bottom: 20px; color: var(--primary);">
+                    <i class="fas fa-quote-left"></i> What Users Say
+                </h2>
+                
+                <div class="testimonial-grid">
+                    <div class="testimonial">
+                        <div class="testimonial-text">
+                            "FGS VPN reduced my ping from 120ms to 45ms in PUBG Mobile. Best free gaming VPN I've used!"
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User">
+                            <div>
+                                <div>Alex K.</div>
+                                <div style="font-size: 0.8rem; color: #94a3b8;">Professional Gamer</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-text">
+                            "I use this daily to access geo-restricted content. Works perfectly with Netflix and other streaming services."
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User">
+                            <div>
+                                <div>Sarah M.</div>
+                                <div style="font-size: 0.8rem; color: #94a3b8;">Regular User</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-text">
+                            "The V2Ray support helps me bypass my university's strict firewall. Lifesaver for research!"
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="User">
+                            <div>
+                                <div>Michael T.</div>
+                                <div style="font-size: 0.8rem; color: #94a3b8;">University Student</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+            
+            <!-- FAQ -->
+            <div class="faq-section">
+                <h2 style="margin-bottom: 20px; color: var(--primary);">
+                    <i class="fas fa-question-circle"></i> Frequently Asked Questions
+                </h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Is FGS VPN Pro really free?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, the basic VPN service is completely free with unlimited bandwidth. Premium gaming servers can be accessed by watching optional ads or purchasing credits.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Is it safe to download the APK?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. Our APK is virus-free and regularly scanned. We provide direct downloads from our official Telegram channel to ensure safety.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Which games work best with FGS VPN?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>All major mobile games including PUBG Mobile, Call of Duty Mobile, Free Fire, Genshin Impact, and more show significant ping reduction with our gaming servers.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>How do I get premium servers?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can earn credits for premium servers by watching short ads (1 credit per ad) or purchase credit packs for uninterrupted access.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Ad -->
+            <div class="ad-container">
+                <div class="ad-label">Advertisement</div>
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                     data-ad-slot="XXXXXXXXXX"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+            
+            <!-- Final CTA -->
+            <div class="download-card" style="margin-top: 40px;">
+                <h2>Ready to Boost Your Gaming?</h2>
+                <p>Download FGS VPN Pro now and experience lag-free gaming with lowest ping servers</p>
+                <a href="https://t.me/fgstunnel" class="btn btn-gaming" style="font-size: 1.2rem; padding: 15px 35px;">
+                    <i class="fas fa-download"></i> Download Now - 18.5 MB
+                </a>
+                <p style="margin-top: 15px; font-size: 0.9rem; color: #94a3b8;">
+                    <i class="fas fa-android"></i> Android 7.0+ | No Root Required
+                </p>
+            </div>
+        </main>
         
         <footer>
-            <p>© 2023 FGS VPN. All rights reserved. | <a href="#" style="color: #4CAF50;">Privacy Policy</a></p>
+            <p>© 2024 FGS VPN Pro. All rights reserved.</p>
+            
+            <div class="footer-links">
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="disclaimer.html">Disclaimer</a>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://t.me/fgstunnel"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            
+            <p style="margin-top: 20px; font-size: 0.8rem;">
+                FGS VPN Pro is not affiliated with any game developers. All trademarks belong to their respective owners.
+            </p>
         </footer>
     </div>
     
-    <!-- Loading/Download Page -->
-    <div class="loading-page" id="loadingPage">
-        <div class="loading-spinner"></div>
-        <h2>Preparing your download...</h2>
-        <p>FGS VPN v3.2.1 (12.5 MB)</p>
-        
-        <div class="progress-bar">
-            <div class="progress" id="downloadProgress"></div>
-        </div>
-        
-        <div class="download-complete" id="downloadComplete">
-            <p>Download complete!</p>
-            <p><a href="#" id="installLink">Tap to install FGS VPN</a></p>
-            <p><small>If download doesn't start automatically, <a href="#" style="color: #4CAF50;">click here</a></small></p>
-        </div>
-    </div>
-    
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const downloadBtn = document.getElementById('downloadBtn');
-            const loadingPage = document.getElementById('loadingPage');
-            const downloadProgress = document.getElementById('downloadProgress');
-            const downloadComplete = document.getElementById('downloadComplete');
-            const installLink = document.getElementById('installLink');
-            
-            // Simulate download process
-            downloadBtn.addEventListener('click', function() {
-                loadingPage.style.display = 'flex';
-                
-                // Simulate progress
-                let progress = 0;
-                const interval = setInterval(function() {
-                    progress += Math.random() * 10;
-                    if (progress > 100) progress = 100;
-                    downloadProgress.style.width = progress + '%';
-                    
-                    if (progress === 100) {
-                        clearInterval(interval);
-                        setTimeout(function() {
-                            downloadComplete.style.display = 'block';
-                            
-                            // For demo purposes, after 3 seconds go to vpn.html
-                            setTimeout(function() {
-                                window.location.href = 'vpn.html';
-                            }, 3000);
-                        }, 500);
-                    }
-                }, 300);
-            });
-            
-            // Handle install link
-            installLink.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.location.href = 'vpn.html';
+        // Toggle FAQ answers
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            answer.classList.toggle('show');
+            const icon = element.querySelector('i');
+            if (answer.classList.contains('show')) {
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            } else {
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            }
+        }
+        
+        // Smooth scroll to features
+        document.getElementById('showFeatures').addEventListener('click', function() {
+            document.getElementById('featuresSection').scrollIntoView({
+                behavior: 'smooth'
             });
         });
+        
+        // Initialize AdSense
+        (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
 </body>
 </html>
